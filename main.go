@@ -16,11 +16,10 @@ func main() {
 	}
 
 	for {
-		fmt.Print("Type [play] to play or [exit] to exit the game: ")
-		var playerInput string
+		playerInput, err := ScanCommand()
 
-		_, err := fmt.Scan(&playerInput)
 		if err != nil {
+			fmt.Println("\nBye!")
 			return
 		}
 
